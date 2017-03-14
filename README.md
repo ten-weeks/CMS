@@ -1,1 +1,1 @@
-# CMS
+# CMS (content management system).

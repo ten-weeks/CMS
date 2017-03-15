@@ -55,7 +55,7 @@ test("POST /store : should insert title,contect and image of article to database
 test("POST /controlpanel : should go to controlpanel page if email and password are correct", (t) => {
     var validtion = {
         email: 'alaa@alaa.com',
-        password: 0595272799
+        password: 595272799
     }
     server.inject({
         method: 'POST',

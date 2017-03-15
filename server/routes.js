@@ -6,8 +6,6 @@ const blogPage = {
     path: '/',
     handler: function(req, reply) {
         dbutils.select(client,function (err, result) {
-          console.log("result",result);
-
           reply.view('blogs', {result:result});
 
         })
@@ -27,8 +25,19 @@ const controlpanel = {
     method: 'POST',
     path: '/controlpanel',
     handler: function(req, reply) {
+      const input = req.payload;
+      console.log("req.payload",req.payload);
+      dbutils.validation(req.payload,client, (err, result) =>{
+        if (result > 0) {
+                reply.view('controlpanel');
+            } else {
+              reply.view('admin', {auth:'Error in email or password'});
+
+            }
+
+      } )
         //  const email = req.payload.email;
-        reply.view('controlpanel');
+
 
     },
     config: {

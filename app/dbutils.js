@@ -17,28 +17,41 @@ function dbconnection(config, cb) {
     return client;
 }
 
+function validation(input, client, cb) {
+    client.query(`SELECT *  from admin where email = \'${input.email}\' AND password  = \'${input.password}\'; `, function(errorSelect, result) {
+        if (errorSelect) {
+            console.log('errorSelect', errorSelect);
+            cb(errorSelect, undefined)
+        }
+        console.log("validation", result.rowCount);
+        cb(undefined, result.rowCount)
+    });
+}
+
 function insert(title, content, image, client) {
-    client.query(`INSERT INTO blog (title, content,image) VALUES (\'${title}\',\'${content}\',\'${image}\');`,function(errorSelect,result){
-      if (errorSelect) {
-                      console.log('errorSelect', errorSelect);
-                  }
+    client.query(`INSERT INTO blog (title, content,image) VALUES (\'${title}\',\'${content}\',\'${image}\');`, function(errorSelect, result) {
+        if (errorSelect) {
+            console.log('errorSelect', errorSelect);
+        }
 
 
     })
 
 }
-function select(client,cb) {
-    client.query(`SELECT * FROM blog;`,function(errorSelect,result){
-      if (errorSelect) {
-                      console.log('errorSelect', errorSelect);
-                  }
-                  cb(undefined,result.rows)
+
+function select(client, cb) {
+    client.query(`SELECT * FROM blog;`, function(errorSelect, result) {
+        if (errorSelect) {
+            console.log('errorSelect', errorSelect);
+        }
+        cb(undefined, result.rows)
     })
 
 }
 module.exports = {
-  select : select,
+    select: select,
     insert: insert,
+    validation: validation,
     dbconnection: dbconnection(config, function(err) {})
 
 }

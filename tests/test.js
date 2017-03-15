@@ -13,6 +13,12 @@ test('dbutils.createUserTable(): should create user table', t => {
 })
 
 test('dbutils.createBlogTable: should create blog table', t => {
+    dbutils.createBlogTable(client, (errInsert, resTable) => {
+        t.notOk(errInsert, 'table created successfully');
+        t.end()
+    })
+})
+test('dbutils.createBlogTable: should create blog table', t => {
     dbutils.createBlogTable(client, (errTable, resTable) => {
         t.notOk(errTable, 'table created successfully');
         t.end()

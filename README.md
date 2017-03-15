@@ -4,7 +4,7 @@
 [![Test Coverage](https://codeclimate.com/github/Alaa-Khattab/myCMS/badges/coverage.svg)](https://codeclimate.com/github/Alaa-Khattab/myCMS/coverage)
 [![Issue Count](https://codeclimate.com/github/codeclimate/codeclimate/badges/issue_count.svg)](https://codeclimate.com/github/codeclimate/codeclimate)
 
-## our project is a Control Management System allows the admin to manage the website, our website is blog
+## our project is a Content Management System allows the admin to manage the website, our website is blog
 
 #### Phase 1 : Create login page for admin
 - [ ]  The admin can open an admin page by enter (the website link/admin)

@@ -7,7 +7,7 @@
     "test": "node tests/test.js",
     "start": "node index.js",
     "mon": "nodemon tests/test.js",
-    "cov" : "./node_modules/.bin/istanbul cover tests/test.js"
+    "cov": "./node_modules/.bin/istanbul cover tests/test.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   "homepage": "https://github.com/ten-weeks/CMS#readme",
   "dependencies": {
     "codeclimate": "0.0.32",
+    "codeclimate-test-reporter": "^0.4.1",
     "handlebars": "^4.0.6",
     "hapi": "^16.1.0",
     "inert": "^4.1.0",

@@ -52,6 +52,8 @@ module.exports = {
     select: select,
     insert: insert,
     validation: validation,
-    dbconnection: dbconnection(config, function(err) {})
+    dbconnection: dbconnection(config, function(err) {
+      
+    })
 
 }

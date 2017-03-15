@@ -29,16 +29,20 @@ function validation(input, client, cb) {
 }
 
 function insert(title, content, image, client) {
-    client.query(`INSERT INTO blog (title, content,image) VALUES (\'${title}\',\'${content}\',\'${image}\');`, function(errorSelect, result) {
-        if (errorSelect) {
-            console.log('errorSelect', errorSelect);
+    client.query(`INSERT INTO blog (title, content,image) VALUES (\'${title}\',\'${content}\',\'${image}\');`, function(errorInsert, result) {
+        if (errorInsert) {
+            console.log('errorInsert', errorInsert);
         }
 
 
     })
 
 }
+function insertAdmin(client,cb) {
+  var rawSql = `INSERT INTO admin (email, password) VALUES ('alaa@alaa.com', 123654);`;
+  client.query(rawSql,cb);
 
+};
 function select(client, cb) {
     client.query(`SELECT * FROM blog;`, function(errorSelect, result) {
         if (errorSelect) {
@@ -48,12 +52,24 @@ function select(client, cb) {
     })
 
 }
+function createUserTable  (client, cb)  {
+  var rawSql = `CREATE TABLE IF NOT EXISTS admin (email text, password INT);`;
+  client.query(rawSql,cb);
+};
+function createBlogTable  (client, cb)  {
+  var rawSql = `CREATE TABLE IF NOT EXISTS blog (title text, content text, image text);`;
+  client.query(rawSql,cb);
+};
+
 module.exports = {
     select: select,
     insert: insert,
     validation: validation,
+    createUserTable :createUserTable,
+    createBlogTable : createBlogTable,
+    insertAdmin : insertAdmin,
     dbconnection: dbconnection(config, function(err) {
-      
+
     })
 
 }

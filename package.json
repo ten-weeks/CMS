@@ -4,10 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node tests/test.js",
+    "tests": "node tests/test.js",
     "start": "node index.js",
     "mon": "nodemon tests/test.js",
-    "cov": "./node_modules/.bin/istanbul cover tests/test.js"
+    "cov": "./node_modules/.bin/istanbul cover tests/test.js",
+    "db:create": "psql -c 'CREATE DATABASE cms;' -U postgres",
+    "db:drop": "psql -c 'DROP DATABASE cms;' -U postgres",
+    "test": "npm run db:create && node tests/test.js && npm run db:drop"
   },
   "repository": {
     "type": "git",

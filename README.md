@@ -11,7 +11,7 @@
 - [ ]  The admin can login by your email and password
 - [ ]  The system check if this user is an admin for control panel or not
 
-#### Phase 2 : Create control panel page, that allows to user insert title, content and image into blog page, this data will insert into database
+#### Phase 2 : Create control panel page, that allows to admin add title, content and image into blog page, this data will insert into database
 
 ![alt text](https://scontent-frt3-1.xx.fbcdn.net/v/t34.0-12/17354676_10208597150105810_1139201974_n.jpg?oh=8d2b2a1b5e44d0ff8cbd9a33e73014cc&oe=58CC77D1)
 

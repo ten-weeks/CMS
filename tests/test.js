@@ -35,7 +35,7 @@ t.equal(validtion !== 1, true, "get 'div' some where");
   t.end();
   client.end()
 
-
+process.exit(0);
 
     });
  })

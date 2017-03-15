@@ -1,7 +1,26 @@
-{{!< layout/default}}
+<!-- {{!< layout/default}}
+{{#each result}}
 Title:
-<h1>{{title}}</h1>
+<h1>{{this.title}}</h1>
 Content:
-<p>{{message}}</p>
-<h3>{{alaa}}</h3>
-<br>
+<p>{{this.content}}</p>
+{{/each}} -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>BLOGS</title>
+  </head>
+  <body>
+    <div class="container">
+      {{#each result}}
+      Title:
+      <h1>{{this.title}}</h1>
+      Content:
+      <p>{{this.content}}</p>
+      Image:
+        <img src = "images/{{this.image}}"/>
+      {{/each}}
+   </div>
+  </body>
+</html>

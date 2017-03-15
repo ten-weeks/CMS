@@ -1,20 +1,20 @@
-var Joi = require('joi');
+const Joi = require('joi');
 const dbutils = require('../app/dbutils.js');
-var client = dbutils.dbconnection;
-var blogPage = {
+const client = dbutils.dbconnection;
+const blogPage = {
     method: 'GET',
     path: '/',
     handler: function(req, reply) {
-        var data = {
-            title: 'This is Index!',
-            message: 'Hello, World. You crazy handlebars layout',
-            alaa : 'JUSt FOR TRY'
-        };
-        reply.view('blogs', data);
+        dbutils.select(client,function (err, result) {
+          console.log("result",result);
+
+          reply.view('blogs', {result:result});
+
+        })
 
     }
 };
-var adminPage = {
+const adminPage = {
     method: 'GET',
     path: '/admin',
     handler: function(req, reply) {
@@ -23,11 +23,11 @@ var adminPage = {
     }
 };
 
-var controlpanel = {
+const controlpanel = {
     method: 'POST',
     path: '/controlpanel',
     handler: function(req, reply) {
-        //  var email = req.payload.email;
+        //  const email = req.payload.email;
         reply.view('controlpanel');
 
     },
@@ -42,22 +42,32 @@ var controlpanel = {
     }
 };
 
-var saveArticels= {
+const displyimage = {
+        method: 'GET',
+        path: '/images/{file*}',
+        handler:{
+           directory: {
+      path: 'images'
+    }
+  }
+    }
+
+const saveArticels= {
     method: 'POST',
     path: '/store',
     handler: function(req, reply) {
         //console.log("req.payload",req.payload);
-        var title = req.payload.title;
-        var content = req.payload.content;
-        var image = req.payload.imageFile;
-        console.log("HHHHH");
+        const title = req.payload.title;
+        const content = req.payload.content;
+        const image = req.payload.imageFile;
         dbutils.insert(title, content, image,client);
         reply.view('controlpanel')
-        
+
     }
 };
 module.exports = [blogPage,
                   adminPage,
                   controlpanel,
-                  saveArticels
+                  saveArticels,
+                  displyimage
 ]

@@ -19,16 +19,25 @@ function dbconnection(config, cb) {
 
 function insert(title, content, image, client) {
     client.query(`INSERT INTO blog (title, content,image) VALUES (\'${title}\',\'${content}\',\'${image}\');`,function(errorSelect,result){
-console.log("DBBBB");
       if (errorSelect) {
                       console.log('errorSelect', errorSelect);
                   }
-                  
+
 
     })
 
 }
+function select(client,cb) {
+    client.query(`SELECT * FROM blog;`,function(errorSelect,result){
+      if (errorSelect) {
+                      console.log('errorSelect', errorSelect);
+                  }
+                  cb(undefined,result.rows)
+    })
+
+}
 module.exports = {
+  select : select,
     insert: insert,
     dbconnection: dbconnection(config, function(err) {})
 

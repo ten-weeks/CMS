@@ -5,8 +5,8 @@ const route = require('../server/routes.js');
 const index = require('../index.js');
 const dbutils = require('../app/dbutils.js');
 var client = dbutils.dbconnection;
-test('dbutils.createUserTable(): should create user table', t => {
-    dbutils.createUserTable(client, (errTable, resTable) => {
+test('dbutils.createAdminTable(): should create Admin table', t => {
+    dbutils.createAdminTable(client, (errTable, resTable) => {
         t.notOk(errTable, 'table created successfully');
         t.end()
     })

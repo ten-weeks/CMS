@@ -52,7 +52,7 @@ function select(client, cb) {
     })
 
 }
-function createUserTable  (client, cb)  {
+function createAdminTable  (client, cb)  {
   var rawSql = `CREATE TABLE IF NOT EXISTS admin (email text, password INT);`;
   client.query(rawSql,cb);
 };
@@ -65,7 +65,7 @@ module.exports = {
     select: select,
     insert: insert,
     validation: validation,
-    createUserTable :createUserTable,
+    createAdminTable :createAdminTable,
     createBlogTable : createBlogTable,
     insertAdmin : insertAdmin,
     dbconnection: dbconnection(config, function(err) {

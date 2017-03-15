@@ -38,16 +38,11 @@ function insert(title, content, image, client) {
     })
 
 }
-function insertAdmin(client) {
-    client.query(`INSERT INTO admin (email, password) VALUES ('alaa@alaa.com', 123654);`, function(errorInsert, result) {
-        if (errorInsert) {
-            console.log('errorInsert', errorInsert);
-        }
+function insertAdmin(client,cb) {
+  var rawSql = `INSERT INTO admin (email, password) VALUES ('alaa@alaa.com', 123654);`;
+  client.query(rawSql,cb);
 
-
-    })
-
-}
+};
 function select(client, cb) {
     client.query(`SELECT * FROM blog;`, function(errorSelect, result) {
         if (errorSelect) {
@@ -72,7 +67,7 @@ module.exports = {
     validation: validation,
     createUserTable :createUserTable,
     createBlogTable : createBlogTable,
-    insertAdmin : insertAdmin, 
+    insertAdmin : insertAdmin,
     dbconnection: dbconnection(config, function(err) {
 
     })

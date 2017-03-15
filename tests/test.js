@@ -12,8 +12,8 @@ test('dbutils.createUserTable(): should create user table', t => {
     })
 })
 
-test('dbutils.createBlogTable: should create blog table', t => {
-    dbutils.createBlogTable(client, (errInsert, resTable) => {
+test('dbutils.insertAdmin: should insert admins email and password', t => {
+    dbutils.insertAdmin(client, (errInsert, resTable) => {
         t.notOk(errInsert, 'table created successfully');
         t.end()
     })
@@ -69,7 +69,7 @@ test("POST /controlpanel : should go to controlpanel page if email and password 
         payload: validtion
     }, (res) => {
         dbutils.validation(validtion, client, (err, result) => {
-            t.equal(result, 1, "email and password are correct")
+            t.equal(result > 0,true, "email and password are correct")
             t.equal(res.statusCode, 200, 'get statusCode correctly ');
             t.end();
         });

@@ -74,9 +74,22 @@ const saveArticels= {
 
     }
 };
+const style = {
+    method: 'GET',
+    path: '/templates/css/{file*}',
+    handler: {
+
+      directory: {
+         path: 'templates/css',
+         listing: true
+     }
+
+    }
+};
 module.exports = [blogPage,
                   adminPage,
                   controlpanel,
                   saveArticels,
+                  style,
                   displyimage
 ]

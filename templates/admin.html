@@ -1,21 +1,18 @@
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="../templates/css/admin.css">
     <title></title>
   </head>
   <body>
-    <form action="/controlpanel" method="POST">
+    <div class="login">
       <h1>{{auth}}</h1>
-      Email:<br>
-      <input type="text" name="email" value="">
-      <br>
-      password<br>
-      <input type="password" name="password" value="" >
-      <br><br>
-      <input type="submit" value="submit">
+    <form action="/controlpanel" method="POST">
+      <input type="text" name="email" placeholder="Email" required="required" value="">
+      <input type="password" name="password" value="" placeholder="Password" >
+      <input type="submit" value="submit" class="btn btn-primary btn-block btn-large" >
     </form>
-
-
   </body>
 </html>

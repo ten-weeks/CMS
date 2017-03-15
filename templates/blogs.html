@@ -1,26 +1,39 @@
-<!-- {{!< layout/default}}
-{{#each result}}
-Title:
-<h1>{{this.title}}</h1>
-Content:
-<p>{{this.content}}</p>
-{{/each}} -->
 <!DOCTYPE html>
+
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="../templates/css/blog.css">
     <title>BLOGS</title>
   </head>
   <body>
-    <div class="container">
-      {{#each result}}
-      Title:
-      <h1>{{this.title}}</h1>
-      Content:
-      <p>{{this.content}}</p>
-      Image:
-        <img src = "images/{{this.image}} " width="200" height="200"/>
-      {{/each}}
-   </div>
+    <div id="arlina">
+    <div id="header">
+      <h1>BLOGS</h1>
+      <!-- <p>Cara Membuat Sticky Widget di Sidebar Blog</p> -->
+    </div>
+
+    <div id="menuwrap">
+      <div id="menu"><span>Site Navigation</span></div>
+    </div>
+    <div class="content">
+
+ {{#each result}}
+<div class="wrp">
+
+    <div class="main">
+      <img src= "images/{{this.image}}" alt="" />
+    </div>
+
+    <div class="text-wrp">
+      <h1 class="title"> {{@title}}{{this.title}} </h1>
+
+      <p class="content">{{@content}}{{this.content}}</p>
+    </div>
+
+  </div>
+  {{/each}}
+</div>
+</div>
   </body>
 </html>

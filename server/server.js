@@ -18,12 +18,10 @@ server.register([Vision, Inert], (err) => {
           html: require('handlebars')
       },
       path: 'templates',
-      layoutPath: 'templates/layout',
-      layout: 'default',
-      partialsPath: 'templates/partials',
-      helpersPath: 'templates/helpers',
+      // partialsPath: 'templates/partials',
+      // helpersPath: 'templates/helpers',
   });
-  
+
   server.route(routes);
 });
 

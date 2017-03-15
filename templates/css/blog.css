@@ -1,0 +1,253 @@
+
+
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
+html {
+  background: #ecf0f1;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+}
+img {
+    width: 75%;
+    height: 350px;
+}
+.title {
+    float: none;
+}
+/*.content {
+    float: right;
+    margin-top: -250px;
+}*/
+a,
+a:visited {
+  color: #555;
+  outline: none;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:visited:hover {
+  color: #22a1c4;
+  text-decoration: none;
+}
+
+#arlina {
+  background: #fff;
+  position: relative;
+  margin: 5% auto;
+  width: 100%;
+  max-width: 1190px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.06);
+  z-index: 3;
+}
+
+#header {
+  margin: 0;
+  padding: 20px 0;
+  background: #fdfdfd;
+}
+
+#header h1 {
+  display: table;
+  color: #2c3e50;
+  font-weight: 700;
+  text-align: center;
+  margin: auto;
+  padding: 40px 20px 20px 20px;
+  font-size: 45px;
+}
+
+#header p {
+  display: block;
+  color: #999;
+  font-weight: 400;
+  text-align: center;
+  margin: 0 0 20px 0;
+  font-size: 18px;
+}
+
+#menuwrap {
+  background: #fff;
+  position: relative;
+  margin: 0 20px;
+  padding: 0;
+  height: 60px;
+  overflow: hidden;
+}
+
+#menu {
+  position: absolute;
+  width: 100%;
+  max-width: 1120px;
+  height: 60px;
+  margin: auto;
+  background: #2c3e50;
+  z-index: 2;
+}
+
+#menu span {
+  display: table;
+  color: rgba(255, 255, 255, .3);
+  text-align: center;
+  margin: auto;
+  padding: 20px 0;
+  font-size: 20px;
+}
+
+#menu:before {
+  position: absolute;
+  content: '';
+  display: inline-block;
+  left: 0;
+  top: 0;
+  height: 60px;
+  width: 80px;
+  margin: 0;
+  text-align: center;
+  background: #2ecc71;
+}
+
+#menu:after {
+  position: absolute;
+  content: '\f015';
+  display: inline-block;
+  font-family: FontAwesome;
+  left: 0;
+  top: 0;
+  height: 60px;
+  line-height: 60px;
+  width: 80px;
+  margin: 0;
+  text-align: center;
+  color: #fff;
+  font-size: 28px;
+}
+
+.content {
+  float: none;
+  margin-top: -250px;
+  position: relative;
+  margin: 0;
+  background: #fff;
+  padding: 20px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.main {
+  position: relative;
+  float: left;
+  width: 60%;
+  background: #fff;
+}
+
+.text-wrp{
+  float: left;
+  width: 40%;
+}
+/*#box,
+#box2,
+#box3 {
+  position: relative;
+  height: 170px;
+  display: block;
+  background: #ecf0f1;
+  margin: 0 0 20px 0;
+}
+
+#box:last-child {
+  margin: 0;
+}
+
+#box:before,
+#box2:before,
+#box3:before {
+  position: absolute;
+  content: '';
+  display: inline-block;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 170px;
+  width: 250px;
+  margin: 0;
+  background: #fff url('http://4.bp.blogspot.com/-85zQwMdLm24/VmGwA9aFRgI/AAAAAAAAAVM/AHpkZL9MdTQ/s1600/Nubie%2BBanget%2BBlogger%2BTemplate.jpg') center;
+  background-size: cover
+}
+
+#box2:before {
+  background: #fff url('http://2.bp.blogspot.com/-V5Pi6tg3kk4/VmFRvAbi6rI/AAAAAAAAATc/9gm3XBewj0k/s1600/Sweet%2BYummy%2BChocolate%2BCake.jpg') center;
+  background-size: cover
+}
+
+#box3:before {
+  background: #fff url('http://2.bp.blogspot.com/-xA82xCIl_8M/VmFRX7fxEaI/AAAAAAAAATU/BXBvzBFgiK0/s1600/Top%2BDestinations%2BTo%2BTravel%2BNext%2BSummer.jpg') center;
+  background-size: cover
+}*/
+
+
+#credit {
+  margin: 0;
+  background: #2ecc71;
+}
+
+#credit span {
+  display: table;
+  color: rgba(255, 255, 255, .6);
+  text-align: center;
+  font-size: 16px;
+  line-height: 80px;
+  margin: auto;
+}
+
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+.back-to-top {
+  visibility: hidden;
+  background-color: #2c3e50;
+  color: #fff;
+  width: 42px;
+  height: 42px;
+  text-align: center;
+  line-height: 38px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 90;
+  cursor: pointer;
+  opacity: 0;
+  border-radius: 3px;
+  -webkit-transform: translateZ(0);
+  transition: all .4s
+}
+
+.back-to-top .fa {
+  font-size: 22px;
+  vertical-align: middle
+}
+
+.back-to-top:hover {
+  background-color: #2ecc71;
+  color: #fff;
+  opacity: 1;
+}
+
+.back-to-top.show {
+  visibility: visible;
+  opacity: 1;
+}

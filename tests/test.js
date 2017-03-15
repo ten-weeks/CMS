@@ -69,7 +69,7 @@ test("POST /controlpanel : should go to controlpanel page if email and password 
         payload: validtion
     }, (res) => {
         dbutils.validation(validtion, client, (err, result) => {
-            t.equal(result > 0,true, "email and password are correct")
+            t.notEequal(result ,0, "email and password are correct")
             t.equal(res.statusCode, 200, 'get statusCode correctly ');
             t.end();
         });

@@ -1,3 +1,4 @@
+ require('dotenv').config;
 const test = require('tape');
 const shot = require('shot');
 const server = require('../server/server.js');
@@ -61,7 +62,7 @@ test("POST /store : should insert title,contect and image of article to database
 test("POST /controlpanel : should go to controlpanel page if email and password are correct", (t) => {
     var validtion = {
         email: 'alaa@alaa.com',
-        password: 123654
+        password:123654
     }
     server.inject({
         method: 'POST',

@@ -34,7 +34,6 @@ function validation(input, client, cb) {
             console.log('errorSelect', errorSelect);
             cb(errorSelect, undefined)
         }
-        console.log("validation", result.rowCount);
         cb(undefined, result.rowCount)
     });
 }
@@ -44,16 +43,15 @@ function insert(title, content, image, client) {
         if (errorInsert) {
             console.log('errorInsert', errorInsert);
         }
-
-
     })
-
 }
-function insertAdmin(client,cb) {
-  var rawSql = `INSERT INTO admin (email, password) VALUES ('alaa@alaa.com', 123654);`;
-  client.query(rawSql,cb);
+
+function insertAdmin(client, cb) {
+    var rawSql = `INSERT INTO admin (email, password) VALUES ('alaa@alaa.com', 123654);`;
+    client.query(rawSql, cb);
 
 };
+
 function select(client, cb) {
     client.query(`SELECT * FROM blog;`, function(errorSelect, result) {
         if (errorSelect) {
@@ -61,26 +59,26 @@ function select(client, cb) {
         }
         cb(undefined, result.rows)
     })
-
 }
-function createAdminTable  (client, cb)  {
-  var rawSql = `CREATE TABLE IF NOT EXISTS admin (email text, password INT);`;
-  client.query(rawSql,cb);
+
+function createAdminTable(client, cb) {
+    var rawSql = `CREATE TABLE IF NOT EXISTS admin (email text, password INT);`;
+    client.query(rawSql, cb);
 };
-function createBlogTable  (client, cb)  {
-  var rawSql = `CREATE TABLE IF NOT EXISTS blog (title text, content text, image text);`;
-  client.query(rawSql,cb);
+
+function createBlogTable(client, cb) {
+    var rawSql = `CREATE TABLE IF NOT EXISTS blog (title text, content text, image text);`;
+    client.query(rawSql, cb);
 };
 
 module.exports = {
     select: select,
     insert: insert,
     validation: validation,
-    createAdminTable :createAdminTable,
-    createBlogTable : createBlogTable,
-    insertAdmin : insertAdmin,
+    createAdminTable: createAdminTable,
+    createBlogTable: createBlogTable,
+    insertAdmin: insertAdmin,
     dbconnection: dbconnection(config, function(err) {
 
     })
-
 }

@@ -1,93 +1,68 @@
-
-
 <!DOCTYPE html>
-<html >
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <title>Admin Panel Undone</title>
+    <meta charset="UTF-8">
+    <title>Admin Panel Undone</title>
 
-
-  <!-- <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'> -->
-
-<link rel="stylesheet" href="../templates/sstyle/css/bootstrap.min.css">
-      <link rel="stylesheet" href="../templates/css/panel.css">
-
-
+    <link rel="stylesheet" href="../templates/sstyle/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../templates/css/panel.css">
 </head>
 
 <body>
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Admin Panel</a>
+                <a class="navbar-brand" href="/">Admin Panel</a>
+            </div>
+            <div class="collapse navbar-collapse">
+
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="col-md-3">
+            <div id="sidebar">
+                <ul class="nav navbar-nav side-bar">
+                    <li class="side-bar tmargin"><a href="#"><span class="glyphicon glyphicon-list">&nbsp;</span>Dashboard</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-9 animated bounce">
+            <h1 class="page-header">Dashboard</h1>
+            <ul class="breadcrumb">
+                <li><span class="glyphicon glyphicon-home">&nbsp;</span>Home</li>
+                <li><a href="#">Dashboard</a></li>
+            </ul>
+            <table>
+                <tbody>
+                    <tr>
+                        <form action="/store" method="POST">
+                            Title:<br>
+                            <input type="text" name="title" value="">
+                            <br> Content
+                            <br>
+                            <textarea rows="6" cols="90" type="textarea" name="content" value=""> </textarea>
+                            <br> choose image <br>
+
+                            <input type="file" name="imageFile">
+                            <br><br>
+                            <input type="submit" value="Add">
+                        </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-    <div class="collapse navbar-collapse">
 
     </div>
-  </div>
-</nav>
-<div class="container-fluid">
-  <div class="col-md-3">
-
-    <div id="sidebar">
-
-
-      <ul class="nav navbar-nav side-bar">
-        <li class="side-bar tmargin"><a href="#"><span class="glyphicon glyphicon-list">&nbsp;</span>Dashboard</a></li>
-
-
-      </ul>
-    </div>
-  </div>
-  <div class="col-md-9 animated bounce">
-    <h1 class="page-header">Dashboard</h1>
-    <ul class="breadcrumb">
-      <li><span class="glyphicon glyphicon-home">&nbsp;</span>Home</li>
-      <li><a href="#">Dashboard</a></li>
-    </ul>
-    <table >
-
-      <tbody>
-
-        <!-- START CONTENT END -->
-        <tr>
-
-
-              <form action="/store" method="POST">
-                Title:<br>
-                <input type="text" name="title" value="">
-                <br>
-                Content<br>
-                <textarea rows="6" cols="90" type="textarea" name="content" value="" > </textarea>
-                <br>
-                choose image <br>
-
-                <input type="file" name="imageFile">
-                <br><br>
-                <input type="submit" value="Add">
-              </form>
-
-
-          </td>
-        </tr>
-
-        <!-- DUMP CONTENT END -->
-
-      </tbody>
-
-    </table>
-  </div>
-</div>
-
-</div>
-
-<script src='templates/sstyle/js/bootstrap.min.js'></script>
-
-
+    <script src='templates/sstyle/js/bootstrap.min.js'></script>
 </body>
+
 </html>

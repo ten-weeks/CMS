@@ -7,7 +7,7 @@
 ## our project is a blog with Content Management System that allows the admin to manage the website.
 
 #### Phase 1 : Create login page for admin
- - The admin can open an admin page by enter (the website link/admin)
+ - The admin can open an admin page by enter (the website link)/admin => https://blog-website.herokuapp.com/admin
  - The admin can login by your email and password
  - The system check if this user is an admin for control panel or not
 

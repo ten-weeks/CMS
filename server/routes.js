@@ -6,7 +6,8 @@ const blogPage = {
     path: '/',
     handler: function(req, reply) {
         dbutils.select(client,function (err, result) {
-          reply.view('blogs', {result:result});
+          var data = result.reverse()
+          reply.view('blogs', {data:data});
 
         })
 
@@ -26,7 +27,6 @@ const controlpanel = {
     path: '/controlpanel',
     handler: function(req, reply) {
       const input = req.payload;
-      console.log("req.payload",req.payload);
       dbutils.validation(req.payload,client, (err, result) =>{
         if (result > 0) {
                 reply.view('controlpanel');

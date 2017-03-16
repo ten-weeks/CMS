@@ -86,10 +86,24 @@ const style = {
 
     }
 };
+const sstyle = {
+    method: 'GET',
+    path: '/templates/sstyle/{file*}',
+    handler: {
+
+      directory: {
+         path: 'templates/sstyle',
+         listing: true
+     }
+
+    }
+};
+
 module.exports = [blogPage,
                   adminPage,
                   controlpanel,
                   saveArticels,
                   style,
+                  sstyle,
                   displyimage
 ]

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../templates/css/blog.css">
@@ -17,25 +18,30 @@
             <div id="menu"><span>Blog Page</span></div>
         </div>
         <div class="content">
+          {{#each data}}
+         <div class="wrp">
 
-            {{#each data}}
-            <div class="wrp">
+             <div class="main">
+                 <img src="images/{{this.image}}" alt="" />
+             </div>
 
-                <div class="main">
-                    <img src="images/{{this.image}}" alt="" />
-                </div>
+             <div class="text-wrp">
+                 <h1 class="title"> {{@title}}{{this.title}} </h1>
 
-                <div class="text-wrp">
-                    <h1 class="title"> {{@title}}{{this.title}} </h1>
+                 <p class="content">{{@content}}{{this.content}}</p>
 
-                    <p class="content">{{@content}}{{this.content}}</p>
-                </div>
-<br> <br> <br>
-            </div>
-            <br> <br> <br>
-            {{/each}}
-            <br> <br> <br>
-        </div>
+
+                 <a href="/singleArticle/{{this.title}}">
+                     <lable>Reade More</label>
+                 </a>
+             </div>
+
+         </div>
+         {{/each}}
+
+
     </div>
 </body>
+
 </html>
+ 

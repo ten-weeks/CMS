@@ -1,41 +1,42 @@
 {
-    "name": "blogs",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "tests": "node tests/test.js",
-        "start": "node index.js",
-        "mon": "nodemon tests/test.js",
-        "cov": "./node_modules/.bin/istanbul cover tests/test.js",
-        "db:create": "psql -c 'CREATE DATABASE cms;' -U postgres",
-        "db:drop": "psql -c 'DROP DATABASE cms;' -U postgres",
-        "test": "npm run db:create && node tests/test.js && npm run db:drop"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/ten-weeks/CMS.git"
-    },
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/ten-weeks/CMS/issues"
-    },
-    "homepage": "https://github.com/ten-weeks/CMS#readme",
-    "dependencies": {
-        "codeclimate": "0.0.32",
-        "codeclimate-test-reporter": "^0.4.1",
-        "dotenv": "^4.0.0",
-        "handlebars": "^4.0.6",
-        "hapi": "^16.1.0",
-        "inert": "^4.1.0",
-        "istanbul": "^0.4.5",
-        "nodemon": "^1.11.0",
-        "path": "^0.12.7",
-        "pg": "^6.1.4",
-        "shot": "^3.4.0",
-        "tabe": "^1.0.4",
-        "tape": "^4.6.3",
-        "vision": "^4.1.1"
-    }
+  "name": "blogs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tests": "node tests/test.js",
+    "start": "node index.js",
+    "mon": "nodemon tests/test.js",
+    "cov": "./node_modules/.bin/istanbul cover tests/test.js",
+    "db:create": "psql -c 'CREATE DATABASE cms;' -U postgres",
+    "db:drop": "psql -c 'DROP DATABASE cms;' -U postgres",
+    "test": "npm run db:create && node tests/test.js && npm run db:drop"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ten-weeks/CMS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ten-weeks/CMS/issues"
+  },
+  "homepage": "https://github.com/ten-weeks/CMS#readme",
+  "dependencies": {
+    "codeclimate": "0.0.32",
+    "codeclimate-test-reporter": "^0.4.1",
+    "dotenv": "^4.0.0",
+    "handlebars": "^4.0.6",
+    "hapi": "^16.1.0",
+    "inert": "^4.1.0",
+    "istanbul": "^0.4.5",
+    "nodemon": "^1.11.0",
+    "path": "^0.12.7",
+    "pg": "^6.1.4",
+    "shot": "^3.4.0",
+    "tabe": "^1.0.4",
+    "tape": "^4.6.3",
+    "throw-max-listeners-error": "^1.0.1",
+    "vision": "^4.1.1"
+  }
 }

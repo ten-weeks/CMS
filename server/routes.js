@@ -17,9 +17,26 @@ const adminPage = {
     method: 'GET',
     path: '/admin',
     handler: function(req, reply) {
-        reply.view('admin');
+        reply.view('admin', {
+            layout: true
+        });
     }
 };
+
+const singleArticle = {
+    method: 'GET',
+    path: '/singleArticle/{title}',
+    handler: (req, reply) => {
+        var article = req.params.title
+        dbutils.selectSingleArticle(client, 'blog', article, (err, data) => {
+            reply.view('singleArticle', {
+                data: data
+            })
+        })
+
+    }
+
+}
 
 const controlpanel = {
     method: 'POST',
@@ -28,20 +45,28 @@ const controlpanel = {
         const input = req.payload;
         dbutils.validation(req.payload, client, (err, result) => {
             if (result > 0) {
-                reply.view('controlpanel');
+                reply.view('controlpanel', {
+                    layout: false
+                });
             } else {
                 reply.view('admin', {
                     auth: 'Error in email or password'
+                }, {
+                    layout: false
                 });
             }
         })
     },
     config: {
         validate: {
-            payload: {
+             payload:
+             {
                 email: Joi.string().email().required(),
                 password: Joi.number().integer().required()
-            }
+            },
+            options: {
+        allowUnknown: true
+      }
         }
     }
 };
@@ -94,5 +119,6 @@ module.exports = [blogPage,
     saveArticels,
     style,
     sstyle,
-    displyimage
+    displyimage,
+    singleArticle
 ]
